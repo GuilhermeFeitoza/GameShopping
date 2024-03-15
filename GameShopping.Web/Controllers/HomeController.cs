@@ -1,6 +1,13 @@
 ﻿using GameShopping.Web.Models;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace GameShopping.Web.Controllers
 {
@@ -27,6 +34,17 @@ namespace GameShopping.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        [Authorize]
+        public async Task<IActionResult> Login()
+        {
+            var accessToken = await HttpContext.GetTokenAsync("access_token");
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Logout()
+        {
+            return SignOut("Cookies", "oidc");
         }
     }
 }

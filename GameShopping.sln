@@ -16,6 +16,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameShopping.IdentityServer", "GameShopping.IdentityServer\GameShopping.IdentityServer.csproj", "{6BB1175E-28EC-44DA-860D-DC6AF52F04AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{98A12659-F246-4C0A-AE52-1054BCA9AAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98A12659-F246-4C0A-AE52-1054BCA9AAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98A12659-F246-4C0A-AE52-1054BCA9AAB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB1175E-28EC-44DA-860D-DC6AF52F04AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB1175E-28EC-44DA-860D-DC6AF52F04AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB1175E-28EC-44DA-860D-DC6AF52F04AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB1175E-28EC-44DA-860D-DC6AF52F04AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -37,6 +43,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2CB6125A-9F36-4324-AA61-1930022EF169} = {BCC29699-486A-4E27-B9BC-3E7DC7CCD165}
 		{98A12659-F246-4C0A-AE52-1054BCA9AAB4} = {4963B113-C73C-4069-BC44-DF8C48AFD7D2}
+		{6BB1175E-28EC-44DA-860D-DC6AF52F04AF} = {4963B113-C73C-4069-BC44-DF8C48AFD7D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B6770F20-5100-4E23-BC25-3365C7A8B99D}

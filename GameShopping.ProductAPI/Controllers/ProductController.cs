@@ -1,5 +1,6 @@
 ﻿using GameShopping.ProductAPI.Data.ValueObjects;
 using GameShopping.ProductAPI.Repository;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,7 @@ namespace GameShopping.ProductAPI.Controllers
                 
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<ProductVO>>> GetById(long id) {
 
@@ -25,6 +27,7 @@ namespace GameShopping.ProductAPI.Controllers
             if (product == null) { return NotFound(); }
             return Ok(product);
         }
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<ProductVO>> GetAll()
         {
@@ -34,18 +37,18 @@ namespace GameShopping.ProductAPI.Controllers
             return Ok(products);
         }
 
-
+        [Authorize]
         [HttpPost]
-        public async Task<ActionResult<ProductVO>> Create(ProductVO vo)
+        public async Task<ActionResult<ProductVO>> Create([FromBody]ProductVO vo)
         {
 
             if (vo == null) { return BadRequest(); }
             var product = await _repository.Create(vo);
             return Ok(product);
         }
-
+        [Authorize]
         [HttpPut]
-        public async Task<ActionResult<ProductVO>> Update(ProductVO vo)
+        public async Task<ActionResult<ProductVO>> Update([FromBody]ProductVO vo)
         {
 
            
@@ -54,6 +57,7 @@ namespace GameShopping.ProductAPI.Controllers
             return Ok(product);
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
 
         public async Task<ActionResult>Delete(long id)
